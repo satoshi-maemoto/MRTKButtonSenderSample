@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public ToolTip toolTip;
+    public ToolTip toolTip01;
+    public ToolTip toolTip02;
 
     public void ButtonClicked()
     {
-        this.toolTip.ToolTipText = this.GetEventSender()?.name;
+        this.toolTip01.ToolTipText = this.GetEventSender()?.name;
     }
 
     private GameObject GetEventSender()
@@ -28,5 +29,12 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
         return null;
+    }
+
+
+
+    public void ButtonClickedWithGameObject(GameObject go)
+    {
+        this.toolTip02.ToolTipText = go?.name;
     }
 }
